@@ -19,7 +19,6 @@ pipeline{
          stage('Image build'){
                   steps{	
 			sh "docker build -t namma-image:${BUILD_NUMBER} ."
-			sh "docker run -d -p 6060:8080 --name port namma-image:${BUILD_NUMBER}"
                   }
             }  
        stage('Publish'){
