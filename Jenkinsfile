@@ -28,5 +28,10 @@ pipeline{
 			sh "docker push ambinsdocker/work:${BUILD_NUMBER}"
                   }
            }  
+       stage('Deliver'){
+                  steps{	
+                	
+                  }
+           }  
 	}
 }
