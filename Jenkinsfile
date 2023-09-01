@@ -1,8 +1,8 @@
 pipeline{
       agent any
-//  environment {
-//    DOCKERHUB_CREDENTIALS = credentials('docker-cred')
-//    }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('docker-cred')
+    }
       stages{
             stage('check out'){
                   steps{
@@ -21,10 +21,10 @@ pipeline{
 			                sh "docker build -t namma-image:${BUILD_NUMBER} ."
                   }
             }  
-     //  stage('Publish'){
-    //              steps{	
-    //            			sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-     //             }
-     //      }  
+       stage('Publish'){
+                  steps{	
+                			sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                  }
+           }  
 	}
 }
