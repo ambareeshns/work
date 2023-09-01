@@ -28,7 +28,7 @@ pipeline{
 			sh "docker push ambinsdocker/work:${BUILD_NUMBER}"
                   }
            }  
-       stage('Deliver'){
+       stage('Delivery'){
                   steps{	
                 	sh "docker pull ambinsdocker/work:${BUILD_NUMBER}"
 			sh "docker rm -f port"
