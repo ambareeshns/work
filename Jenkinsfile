@@ -6,8 +6,8 @@ pipeline{
       stages{
             stage('check out'){
                   steps{
-			sh "rm -rf testingrepo"
-                        sh "git clone https://github.com/ambareeshns/testingrepo.git"					
+			sh "rm -rf work"
+                        sh "git clone https://github.com/ambareeshns/work.git"					
                   }
             }
 	      stage('Build'){
