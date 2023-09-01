@@ -18,12 +18,12 @@ pipeline{
             }
          stage('Image build'){
                   steps{	
-			                sh "docker build -t namma-image:${BUILD_NUMBER} ."
+			sh "docker build -t namma-image:${BUILD_NUMBER} ."
                   }
             }  
        stage('Publish'){
                   steps{	
-                			sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                	sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
                   }
            }  
 	}
