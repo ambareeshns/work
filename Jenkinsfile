@@ -1,7 +1,7 @@
 pipeline{
       agent any
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker-cred')
+    DOCKERHUB_CREDENTIALS = credentials('ambinsdocker')
     }
       stages{
             stage('check out'){
