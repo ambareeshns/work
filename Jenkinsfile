@@ -30,7 +30,7 @@ pipeline{
            }  
        stage('Deliver'){
                   steps{	
-                	
+                	sh "docker pull ambinsdocker/work:${BUILD_NUMBER}"
                   }
            }  
 	}
