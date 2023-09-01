@@ -32,6 +32,8 @@ pipeline{
        stage('Deliver'){
                   steps{	
                 	sh "docker pull ambinsdocker/work:${BUILD_NUMBER}"
+			sh "docker rm -f port"
+			sh "docker run -d -p 6060:8080 --name port namma-image:${BUILD_NUMBER}"
                   }
            }  
 	}
