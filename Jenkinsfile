@@ -30,7 +30,6 @@ pipeline{
            }  
        stage('Delivery'){
                   steps{	
-			sh "cd /home/ubuntu"
                 	sh "helm upgrade demo-deploy ./work-chart --set Build-num=${BUILD_NUMBER}"
 			
                   }
