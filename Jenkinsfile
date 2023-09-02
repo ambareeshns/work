@@ -30,9 +30,8 @@ pipeline{
            }  
        stage('Delivery'){
                   steps{	
-                	sh "docker pull ambinsdocker/work:${BUILD_NUMBER}"
-			sh "docker rm -f port"
-			sh "docker run -d -p 7070:8080 --name port namma-image:${BUILD_NUMBER}"
+                	sh "helm upgrade demo-deploy ./work-chart --set Build-num=${BUILD_NUMBER}"
+			
                   }
            }  
 	}
