@@ -36,7 +36,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
-			sh "echo $KUBE_CREDENTIALS_PSW | su -u $KUBE_CREDENTIALS_USR --password-stdin"
+			sh "echo $KUBE_CREDENTIALS_PSW | su  $KUBE_CREDENTIALS_USR --password-stdin"
 			//sh "echo ambi | sudo -S sudo helm install demo-deploy ./work-chart"
                 	sh "sudo helm install demo-deploy ./work-chart"
                   }
