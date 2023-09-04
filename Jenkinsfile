@@ -33,6 +33,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "cd"
+			sh "pwd"
                 	sh "helm install demo-deploy ./work-chart"
                   }
            }  
