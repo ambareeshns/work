@@ -17,7 +17,8 @@ pipeline{
                   }
             }
          stage('Image build'){
-                  steps{	
+                  steps{
+			
 			sh "docker build -t namma-image:${BUILD_NUMBER} ."
                   }
             }  
@@ -29,7 +30,9 @@ pipeline{
                   }
            }  
        stage('Delivery'){
-                  steps{	
+                  steps{
+			sh "ls"
+			sh "cd"
                 	sh "helm install demo-deploy ./work-chart"
                   }
            }  
