@@ -2,6 +2,7 @@ pipeline{
       agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('ambinsdocker')
+	  KUBE_CREDENTIALS = credentials('pass')
     }
       stages{
             stage('check out'){
@@ -35,6 +36,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
+			sh "echo $KUBE_CREDENTIALS_PSW | su ubuntu -u $KUBE_CREDENTIALS_USR --password-stdin"
                 	sh "sudo helm install demo-deploy ./work-chart"
                   }
            }  
