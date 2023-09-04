@@ -30,7 +30,7 @@ pipeline{
            }  
        stage('Delivery'){
                   steps{	
-                	sh "helm install demo-deploy ./work-chart 
+                	sh "helm install demo-deploy ./work-chart"
                   }
            }  
 	}
