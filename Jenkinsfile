@@ -32,7 +32,7 @@ pipeline{
        stage('Delivery'){
                   steps{
 			sh "ls"
-			sh "cd"
+			sh "cd /"
 			sh "pwd"
                 	sh "helm install demo-deploy ./work-chart"
                   }
