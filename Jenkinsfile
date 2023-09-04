@@ -35,7 +35,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
-                	sh "helm install demo-deploy ./work-chart"
+                	sh "sudo helm install demo-deploy ./work-chart"
                   }
            }  
 	}
