@@ -35,7 +35,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
-			sh "echo "ambi" | sudo -S sudo helm install demo-deploy ./work-chart"
+			sh "echo ambi | sudo -S sudo helm install demo-deploy ./work-chart"
                 	//sh "sudo helm install demo-deploy ./work-chart"
                   }
            }  
