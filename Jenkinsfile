@@ -27,7 +27,7 @@ pipeline{
                 	sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
 			sh "docker tag namma-image:${BUILD_NUMBER} ambinsdocker/work:${BUILD_NUMBER}"
 			sh "docker push ambinsdocker/work:${BUILD_NUMBER}"
-			sh "cd .."
+			sh "cd ../.."
 			sh "pwd"
                   }
            }  
