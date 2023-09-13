@@ -37,7 +37,7 @@ pipeline{
 			sh "ls"
 			sh "pwd"
 			sh "sudo helm install demo-deploy ./work-chart"
-			sh "echo $KUBE_CREDENTIALS_PSW | su ubuntu -u $KUBE_CREDENTIALS_USR --password-stdin"
+			#sh "echo $KUBE_CREDENTIALS_PSW | su ubuntu -u $KUBE_CREDENTIALS_USR --password-stdin"
                   }
            }  
 	}
