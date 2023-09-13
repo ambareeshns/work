@@ -2,7 +2,7 @@ pipeline{
       agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('ambinsdocker')
-	  KUBE_CREDENTIALS = credentials('pass')
+#	  KUBE_CREDENTIALS = credentials('pass')
     }
       stages{
             stage('check out'){
