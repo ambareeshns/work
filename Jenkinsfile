@@ -36,8 +36,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
-			sh "sudo helm install demo-deploy ./work-chart"
-			
+			sh "sudo helm upgrade nam-deploy ./work-chart --set Replicas=5"
                   }
            }  
 	}
