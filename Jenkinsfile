@@ -32,6 +32,11 @@ pipeline{
 			sh "pwd"
                   }
            }  
+	stage('stop'){
+		steps{
+			sh "echo yet to progress"
+		}
+	}
        stage('Delivery'){
                   steps{
 			sh "ls"
