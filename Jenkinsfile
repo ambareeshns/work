@@ -1,8 +1,7 @@
 pipeline{
       agent any
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('ambinsdocker')
-	 
+    DOCKERHUB_CREDENTIALS = credentials('ambinsdocker')	 
     }
       stages{
             stage('check out'){
@@ -12,14 +11,12 @@ pipeline{
                   }
             }
 	      stage('Build'){
-                  steps{	
-			
+                  steps{				
                         sh "mvn package"				
                   }
             }
          stage('Image build'){
-                  steps{
-			
+                  steps{			
 			sh "docker build -t namma-image:${BUILD_NUMBER} ."
                   }
             }  
@@ -32,11 +29,6 @@ pipeline{
 			sh "pwd"
                   }
            }  
-	stage('stop'){
-		steps{
-			sh "echo yet to progress"
-		}
-	}
        stage('Delivery'){
 	       agent { label 'k8s' }
                   steps{
