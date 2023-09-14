@@ -38,6 +38,7 @@ pipeline{
 		}
 	}
        stage('Delivery'){
+	       agent { label 'k8s' }
                   steps{
 			sh "ls"
 			sh "pwd"
