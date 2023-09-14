@@ -40,8 +40,6 @@ pipeline{
        stage('Delivery'){
 	       agent { label 'k8s' }
                   steps{
-			sh "ls"
-			sh "pwd"
 			sh "helm upgrade nam-deploy ./work-chart --set Replicas=5"
                   }
            }  
