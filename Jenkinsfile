@@ -42,7 +42,7 @@ pipeline{
                   steps{
 			sh "ls"
 			sh "pwd"
-			sh "sudo helm upgrade nam-deploy ./work-chart --set Replicas=5"
+			sh "helm upgrade nam-deploy ./work-chart --set Replicas=5"
                   }
            }  
 	}
